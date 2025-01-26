@@ -10,16 +10,20 @@
 <body>
     <form action="index.php" method="post">
         <label>
-            <input type="radio" name="creditCard" value="Visa">
-            Visa
+            <input type="checkbox" name="pizza">
+            Pizza
         </label><br>
         <label>
-            <input type="radio" name="creditCard" value="Mastercard">
-            Mastercard
+            <input type="checkbox" name="hamburger">
+            Hamburger
         </label><br>
         <label>
-            <input type="radio" name="creditCard" value="American Express">
-            American Express
+            <input type="checkbox" name="hotdog">
+            Hotdog
+        </label><br>
+        <label>
+            <input type="checkbox" name="taco">
+            Taco
         </label><br>
         <input type="submit" name="confirm" value="confirm"><br>
     </form>
@@ -28,21 +32,33 @@
 </html>
 <?php
 if (isset($_POST["confirm"])) {
-    $creditCard = null;
-    if (isset($_POST["creditCard"])) {
-        $creditCard = $_POST["creditCard"];
+    if (isset($_POST["pizza"])) {
+        echo "You Like Pizza!<br>";
     }
+    if (isset($_POST["hamburger"])) {
+        echo "You Like Hamburger!<br>";
+    }
+    if (isset($_POST["hotdog"])) {
+        echo "You Like Hotdog!<br>";
+    }
+    if (isset($_POST["taco"])) {
+        echo "You Like Taco!<br>";
+    }
+    if (empty($_POST["pizza"])) {
+        echo "You Don't Like Pizza!<br>";
+    }
+    if (empty($_POST["hamburger"])) {
+        echo "You Don't Like Hamburger!<br>";
+    }
+    if (empty($_POST["hotdog"])) {
+        echo "You Don't Like Hotdog!<br>";
+    }
+    if (empty($_POST["taco"])) {
+        echo "You Don't Like Taco!<br>";
+    }
+
+
     /*
-    if ($creditCard == "Visa") {
-        echo "You Selected Visa";
-        } elseif ($creditCard == "Mastercard") {
-            echo "You Selected Mastercard";
-            } elseif ($creditCard == "American Express") {
-                echo "You Selected American Express";
-                } else {
-                    echo "Please make a Selection";
-            }
-            */
     switch ($creditCard) {
         case 'Visa':
             echo "You Selected Visa";
@@ -57,5 +73,6 @@ if (isset($_POST["confirm"])) {
             echo "Please make a Selection";
             break;
     }
+    */
 }
 ?>
