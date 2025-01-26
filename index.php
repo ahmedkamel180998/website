@@ -1,37 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="index.php" method="post">
+        <label>Enter A Country:</label>
+        <input type="text" name="country">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
 <?php
-/* Associative Array = An array made of Key=>Value PAIRS
-        ex.1/ countries => capitals
-        ex.2/ id => username
-        ex.3/ item => price
-*/
 $countries = array(
     "USA" => "Washington D.C.",
     "Japan" => "Kyoto",
     "South Korea" => "Seoul",
-    "India" => "New Delhi"
+    "India" => "New Delhi",
+    "China" => "Beijing"
 );
 
-$countries["USA"] = "Las Vegas";
-$countries["China"] = "Beijing";
-
-//array_pop($countries);
-//array_shift($countries);
-// $keys = array_keys($countries);
-// $values = array_values($countries);
-// foreach ($countries as $key => $value) {
-//     echo "{$key} = {$value}<br>";
-// }
-
-//$countries = array_flip($countries);
-// $countries = array_reverse($countries);
-// foreach ($countries as $key => $value) {
-//     echo "{$key} = {$value}<br>";
-// }
-// foreach ($keys as $key) {
-//     echo "{$key}<br>";
-// }
-// foreach ($values as $value) {
-//     echo "{$value}<br>";
-// }
-
-echo count($countries);
+$capital = $countries[$_POST["country"]];
+echo "The Capital is {$capital}";
+?>
