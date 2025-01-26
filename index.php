@@ -1,8 +1,9 @@
 <?php
-$x = 10;
+// operator precedence
+// ()
+// **
+// * / %
+// + -
 
-//$x++;
-//$x--;
-//$x += 2;
-//$x -= 2;
-echo $x;
+$total = 1 + 2 - 3 * 4 / 5 ** 6;
+echo $total;
