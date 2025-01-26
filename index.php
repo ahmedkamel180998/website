@@ -1,20 +1,13 @@
 <?php
-// $age = 0.1;
+$hours = 50;
+$rate = 15;
+$weeklyPay = null;
 
-// if ($age >= 101) {
-//     echo "You're Too old to enter this site<br>";
-// } elseif ($age >= 18) {
-//     echo "You may enter this site<br>";
-// } elseif ($age <= 0) {
-//     echo "That wasn't a valid age<br>";
-// } else {
-//     echo "You must be 18+ to enter<br>";
-// }
-
-$adult = true;
-//if ($adult == true) {
-if ($adult) { // this is prefered this the last method
-    echo "You may enter this site";
+if ($hours <= 0) {
+    $weeklyPay = 0;
+} elseif ($hours <= 40) {
+    $weeklyPay = $hours * $rate;
 } else {
-    echo "You must be an adult to enter this site";
+    $weeklyPay = ($rate * 40) + (($hours - 40) * $rate * 1.5);
 }
+echo "You made \${$weeklyPay} this week";
