@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
-</head>
-
-<body>
-    <form action="index.php" method="post">
-        <label>radius:</label>
-        <input type="text" name="radius"><br>
-        <input type="submit" value="Calculate">
-    </form><br>
-</body>
-
-</html>
 <?php
-$radius = $_POST["radius"];
-$circumference = null;
+// $age = 0.1;
 
-echo "Radius = {$radius}<sub>cm</sub> <br>";
+// if ($age >= 101) {
+//     echo "You're Too old to enter this site<br>";
+// } elseif ($age >= 18) {
+//     echo "You may enter this site<br>";
+// } elseif ($age <= 0) {
+//     echo "That wasn't a valid age<br>";
+// } else {
+//     echo "You must be 18+ to enter<br>";
+// }
 
-$circumference = 2 * pi() * $radius;
-// use the round function to round to the second decimal digit
-$circumference = round($circumference, 2);
-echo "Cicumference = {$circumference}<sub>cm</sub> <br>";
-
-$area = pi() * pow($radius, 2);
-// use the round function to round to the second decimal digit
-$area = round($area, 2);
-echo "Area = {$area}<sub>cm<sup>2<sup></sub> <br>";
-
-$volume = 4 / 3 * pi() * pow($radius, 3);
-// use the round function to round to the second decimal digit
-$volume = round($volume, 2);
-echo "Area = {$volume}<sub>cm<sup>2<sup></sub> <br>";
-?>
+$adult = true;
+//if ($adult == true) {
+if ($adult) { // this is prefered this the last method
+    echo "You may enter this site";
+} else {
+    echo "You must be an adult to enter this site";
+}
