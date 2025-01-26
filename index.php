@@ -9,22 +9,29 @@
 
 <body>
     <form action="index.php" method="post">
-        <label>Enter A Country:</label>
-        <input type="text" name="country">
-        <input type="submit">
+        <label>Username:</label><br>
+        <input type="text" name="username"><br>
+        <label>Password:</label><br>
+        <input type="password" name="password"><br>
+        <input type="submit" name="login" value="Log In"><br>
     </form>
 </body>
 
 </html>
 <?php
-$countries = array(
-    "USA" => "Washington D.C.",
-    "Japan" => "Kyoto",
-    "South Korea" => "Seoul",
-    "India" => "New Delhi",
-    "China" => "Beijing"
-);
+foreach ($_POST as $key => $value) {
+    echo "{$key} = {$value}<br>";
+}
 
-$capital = $countries[$_POST["country"]];
-echo "The Capital is {$capital}";
+if (isset($_POST["login"])) {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    if (empty($username)) {
+        echo "Username is missing!";
+    } elseif (empty($password)) {
+        echo "Password is missing!";
+    } else {
+        echo "Hello {$username}";
+    }
+}
 ?>
