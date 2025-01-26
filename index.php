@@ -1,19 +1,26 @@
 <?php
-$temp = 15;
-$cloudy = false;
-// if ($temp >= 0 && $temp <= 30) {
-//     echo "The Weather is Good.";
+$age = 16;
+$citizen = true;
+
+// if ($age >= 18 && $citizen) {
+//     echo "you Can Vote";
 // } else {
-//     echo "The Weather is Bad.";
+//     echo "You cannot vote";
 // }
-if ($temp < 0 || $temp > 30) {
-    echo "The Weather is Bad.<br>";
+// if (!($age >= 18) || !$citizen) {
+//     echo "you Cannot Vote";
+// } else {
+//     echo "You can vote";
+// }
+
+$child = false;
+$senior = true;
+$ticket = null;
+
+if ($child || $senior) {
+    $ticket = 10;
 } else {
-    echo "The Weather is Good.<br>";
+    $ticket = 15;
 }
 
-if (!$cloudy) {
-    echo "The Weather is Sunny.";
-} else {
-    echo "The Weather is Cloudy.";
-}
+echo "The Ticket Price is: \${$ticket}";
