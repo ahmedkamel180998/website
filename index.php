@@ -1,15 +1,8 @@
 <?php
-//arithmetic operations
-// + - * / ** %
-
 $x = 10;
-$y = 2;
-$z = null;
 
-//$z = $x + $y;
-//$z = $x - $y;
-#$z = $x * $y;
-//$z = $x / $y;
-//$z = $x ** $y;
-$z = $x % $y;
-echo "The Result of ({$x} % {$y}) is: {$z}<br>";
+//$x++;
+//$x--;
+//$x += 2;
+//$x -= 2;
+echo $x;
