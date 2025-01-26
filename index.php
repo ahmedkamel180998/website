@@ -9,36 +9,31 @@
 
 <body>
     <form action="index.php" method="post">
-        <label>x:</label>
-        <input type="text" name="x"><br>
-        <label>y:</label>
-        <input type="text" name="y"><br>
-        <label>z:</label>
-        <input type="text" name="z"><br>
-        <input type="submit" value="Total">
-    </form>
+        <label>radius:</label>
+        <input type="text" name="radius"><br>
+        <input type="submit" value="Calculate">
+    </form><br>
 </body>
 
 </html>
 <?php
-$x = $_POST["x"];
-$y = $_POST["y"];
-$z = $_POST["z"];
-$total = null;
+$radius = $_POST["radius"];
+$circumference = null;
 
-//$total = abs($x);
-//$total = round($x);
-//$total = floor($x);
-//$total = ceil($x);
-//$total = pow($x, $y);
-//$total = sqrt($x);
+echo "Radius = {$radius}<sub>cm</sub> <br>";
 
-/* $total = max($x, $y, $z);
-echo "{$total}<br>";
-$total = min($x, $y, $z);
-echo "{$total}<br>";*/
-//echo pi();
+$circumference = 2 * pi() * $radius;
+// use the round function to round to the second decimal digit
+$circumference = round($circumference, 2);
+echo "Cicumference = {$circumference}<sub>cm</sub> <br>";
 
-//$total = rand(10, 100);
-//echo $total;
+$area = pi() * pow($radius, 2);
+// use the round function to round to the second decimal digit
+$area = round($area, 2);
+echo "Area = {$area}<sub>cm<sup>2<sup></sub> <br>";
+
+$volume = 4 / 3 * pi() * pow($radius, 3);
+// use the round function to round to the second decimal digit
+$volume = round($volume, 2);
+echo "Area = {$volume}<sub>cm<sup>2<sup></sub> <br>";
 ?>
