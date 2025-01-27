@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 include("header.html");
 ?>
 <!DOCTYPE html>
@@ -12,10 +15,17 @@ include("header.html");
 
 <body>
     <h1>This is About Page</h1>
+    <form action="login.php" method="post">
+        <input type="submit" name="logout" value="Logout">
+    </form>
 </body>
 
 </html>
 
 <?php
 include("footer.html");
+if (isset($_POST["logout"])) {
+    session_destroy();
+    header("Location: login.php");
+}
 ?>
