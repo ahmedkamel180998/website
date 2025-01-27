@@ -2,6 +2,7 @@
 session_start();
 ?>
 <?php
+include("database.php");
 include("header.html");
 ?>
 <!DOCTYPE html>
