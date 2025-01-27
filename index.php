@@ -1,24 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="index.php" method="post">
+        <label>
+            Username<br>
+            <input type="text" name="username"><br>
+        </label>
+        <label>
+            Age<br>
+            <input type="text" name="age"><br>
+        </label>
+        <label>
+            Email<br>
+            <input type="text" name="email"><br>
+        </label>
+        <input type="submit" name="login" value="Login">
+    </form>
+</body>
+
+</html>
 <?php
-$username = "Bro Code";
-$phone = "123-456-7890";
+if (isset($_POST["login"])) {
+    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+    //echo "Your username is: {$username}<br>";
 
-//$username = strtolower($username);
-//$username = strtoupper($username);
-//$username = trim($username);
-//$username = str_pad($username, 20, "0");
-//$phone = str_replace("-", "//", $phone);
-//$username = strrev($username);
-//$username = str_shuffle($username);
-//$username = strcmp($username, "Bro Cod");
-//$count = strlen($username);
-//$index = strpos($username, " ");
-//$firstName = substr($username, 0, 3);
-//$lastName = substr($username, 4, 8);
+    $age = filter_input(INPUT_POST, "age", FILTER_SANITIZE_NUMBER_INT);
+    //echo "Your Age is: {$age}<br>";
 
-// $fullName = explode(" ", $username);
-// foreach ($fullName as $value) {
-//     echo $value . "<br>";
-// }
-$name = array("Bro", "The", "Code");
-$name =  implode("^-^", $name);
-echo $name;
+    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+    //echo "Your Email is: {$email}<br>";
+
+    $age = filter_input(INPUT_POST, "age", FILTER_VALIDATE_INT);
+    $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+    if (empty($email)) {
+        echo "That Email wasn't Valid";
+    } else {
+        echo $email;
+    }
+}
+?>
