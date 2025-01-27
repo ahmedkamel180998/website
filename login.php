@@ -36,4 +36,7 @@ if (isset($_POST["login"])) {
         echo "Username or Password is Missed<br>";
     }
 }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "Godbye!";
+}
 ?>
