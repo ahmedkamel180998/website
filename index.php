@@ -1,8 +1,26 @@
 <?php
 session_start();
 ?>
+
 <?php
 include("database.php");
+
+// $sql = "INSERT INTO users (user_name, password)
+//         VALUE ('Ahmed Kamel', 'onthego')";
+// mysqli_query($conn, $sql);
+// mysqli_close($conn);
+
+$username = "John Fedric";
+$password = "ontherun";
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+$sql = "INSERT INTO users (user_name, password)
+        VALUE ('$username', '$hash')";
+mysqli_query($conn, $sql);
+mysqli_close($conn);
+?>
+
+<?php
 include("header.html");
 ?>
 <!DOCTYPE html>
